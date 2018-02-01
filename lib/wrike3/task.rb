@@ -7,8 +7,12 @@ module Wrike3
     end
 
     # Get task list
-    def list(taskable_type = nil, taskable_id = nil, params = {})
+    def list_all(taskable_type = nil, taskable_id = nil, params = {})
       wrike.execute(:get, api_url(nested_path('tasks', taskable_type, taskable_id)), params)
+    end
+
+    def list_folder_tasks(folder_id, params = {})
+      wrike.execute(:get, api_url("folders/#{folder_id}/tasks"), params)
     end
 
     def details(id, params = {})

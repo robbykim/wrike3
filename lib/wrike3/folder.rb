@@ -11,7 +11,7 @@ module Wrike3
     end
 
     def get_subtree(folder_id, params = {})
-      wrike.execute(:get, api_url("folders/#{folder_id}/folders", params)
+      wrike.execute(:get, api_url("folders/#{folder_id}/folders"), params)
     end
 
     # Get folder data

@@ -6,8 +6,12 @@ module Wrike3
       @wrike = wrike
     end
 
-    def tree(folderable_type = nil, folderable_id = nil, params = {})
+    def get_tree_all(folderable_type = nil, folderable_id = nil, params = {})
       wrike.execute(:get, api_url(nested_path('folders', folderable_type, folderable_id)), params)
+    end
+
+    def get_subtree(folder_id, params = {})
+      wrike.execute(:get, api_url("folders/#{folder_id}/folders", params)
     end
 
     # Get folder data

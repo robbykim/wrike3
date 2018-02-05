@@ -14,6 +14,7 @@ require 'wrike3/contact'
 require 'wrike3/folder'
 require 'wrike3/task'
 require 'wrike3/comment'
+require 'wrike3/custom'
 require 'wrike3/timelog'
 require 'wrike3/attachment'
 

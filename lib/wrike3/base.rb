@@ -34,6 +34,10 @@ module Wrike3
       @contact ||= Wrike3::Contact.new(self)
     end
 
+    def custom
+      @custom ||= Wrike3::Custom.new(self)
+    end
+
     def folder
       @folder ||= Wrike3::Folder.new(self)
     end

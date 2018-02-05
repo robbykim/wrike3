@@ -10,6 +10,10 @@ module Wrike3
       wrike.execute(:get, api_url(nested_path('timelogs', logable_type, logable_id)), params)
     end
 
+    def list_folder(folder_id, params = {})
+      wrike.execute(:get, api_url("folders/#{folder_id}/timelogs"), params)
+    end
+
     def details(id, params = {})
       wrike.execute(:get, api_url("timelogs/#{id}"), params)
     end
